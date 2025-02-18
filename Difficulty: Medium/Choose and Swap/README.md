@@ -1,0 +1,10 @@
+<h2><a href="https://www.geeksforgeeks.org/problems/choose-and-swap0531/1?page=8&sprint=a663236c31453b969852f9ea22507634&sprint=a663236c31453b969852f9ea22507634&sortBy=submissions">Choose and Swap</a></h2><h3>Difficulty Level : Difficulty: Medium</h3><hr><div class="problems_problem_content__Xm_eO"><p><span style="font-size: 18px;">You are given a string <strong>str</strong> of lower case english alphabets. You can choose any two characters in the string and replace all the occurences of the first character with the second character and replace all the occurences of the second character with the first character. Your aim is to find the lexicographically smallest string that can be obtained by doing this operation at most once.</span></p>
+<p><span style="font-size: 18px;"><strong>Examples:</strong></span></p>
+<pre><span style="font-size: 18px;"><strong>Input</strong>: str = "ccad"
+<strong>Output:</strong>&nbsp;"aacd"
+<strong>Explanation</strong>: In ccad, we choose a and c and after doing the replacement operation once we get, aacd and this is the lexicographically smallest string possible. </span></pre>
+<pre><span style="font-size: 18px;"><strong>Input: </strong>str = "abba"
+<strong>Output: </strong>"abba"
+<strong>Explanation: </strong>In abba, we can get baab after doing the replacement operation once for a and b but that is not lexicographically smaller than abba. So, the answer is abba. </span></pre>
+<p><span style="font-size: 18px;"><strong>Expected Time Complexity: </strong>O(|str|)&nbsp;<strong><br>Expected Auxiliary Space: </strong>O(1)<strong><br><br>Constraints:</strong><br>1&lt;= |str| &lt;=10<sup>5</sup></span></p>
+<p><span style="font-size: 14pt;"><strong>Note :&nbsp;</strong>Here |str| refers to the length of the string str.</span></p></div><br><p><span style=font-size:18px><strong>Topic Tags : </strong><br><code>Greedy</code>&nbsp;<code>Algorithms</code>&nbsp;
