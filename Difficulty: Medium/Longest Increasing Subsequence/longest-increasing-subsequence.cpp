@@ -30,6 +30,31 @@ class Solution {
     }
 };
 
+
+/*
+
+class Solution {
+  public:
+    int lis(vector<int>& arr) {
+        int n = arr.size();
+        vector<vector<int>> dp(n+1, vector<int>(n+1, 0));
+        
+        for(int idx = n - 1; idx >= 0; idx--) {
+            for(int prev = idx - 1; prev >= -1; prev--) {
+                int skip = dp[idx + 1][prev + 1];
+                int take = 0;
+                if(prev == -1 || arr[idx] > arr[prev])
+                    take = dp[idx + 1][idx + 1] + 1;
+                
+                dp[idx][prev + 1] = max(skip, take);
+            }
+        }
+        
+        return dp[0][-1 + 1];
+    }
+};
+
+*/
 //{ Driver Code Starts.
 
 int main() {
