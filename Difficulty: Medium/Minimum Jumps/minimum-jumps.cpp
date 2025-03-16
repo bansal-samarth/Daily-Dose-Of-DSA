@@ -4,28 +4,31 @@ using namespace std;
 
 
 // } Driver Code Ends
+
 class Solution {
   public:
     int minJumps(vector<int>& arr) {
-        int n = arr.size();
-        int maxReach = arr[0];
-        int steps = 1;
         
-        int k = 1;
+        int n = arr.size();
+        int maxReach = 0;
+        int steps = 0;
+        
+        int i = 0;
         while(maxReach < n-1) {
-            int org = maxReach;
-            
-            for(; k <= org; k++) {
-                maxReach = max(maxReach, k + arr[k]);
+            int till = maxReach;
+            for(; i <= till; i++) {
+                maxReach = max(maxReach, i + arr[i]);
             }
             
-            if(org == maxReach) return -1;
+            if(till == maxReach) return -1;
+            
             steps++;
         }
         
         return steps;
     }
 };
+
 
 
 //{ Driver Code Starts.
