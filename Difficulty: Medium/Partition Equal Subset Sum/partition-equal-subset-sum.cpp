@@ -5,46 +5,35 @@ using namespace std;
 
 
 // } Driver Code Ends
+
 class Solution {
   public:
-    int solve(vector<int>& arr, int idx, int target) {
-        if(target == 0)
-            return 1;
-        if(idx == arr.size())
-            return 0;
-        
-        int skip = solve(arr, idx + 1, target);
-        int take = 0;
-        if(arr[idx] <= target)
-            take = solve(arr, idx + 1, target - arr[idx]);
-        
-        return skip + take;
-    }
     bool equalPartition(vector<int>& arr) {
-        int total = accumulate(arr.begin(), arr.end(), 0);
-        if(total % 2) return false;
-        
-        int target = total / 2;
-        
+        int totalSum = accumulate(arr.begin(), arr.end(), 0);
+         
+        if(totalSum % 2) return false;
+         
+        int target = totalSum / 2;
+         
         int n = arr.size();
-        
-        vector<vector<bool>> dp(n+1, vector<bool>(target+1, false));
-        for(int i = 0; i <= n; i++) {
+        vector<vector<int>> dp(n+1, vector<int>(target+1, false));
+         
+        for(int i = 0; i <= n; i++)
             dp[i][0] = true;
-        }
         
-        for(int idx = n-1; idx >= 0; idx--) {
-            for(int goal = 0; goal <= target; goal++) {
-                if(arr[idx] <= goal)
-                    dp[idx][goal] = dp[idx+1][goal] || dp[idx+1][goal - arr[idx]];
-                else
-                    dp[idx][goal] = dp[idx+1][goal];
+        for(int i = n-1; i >= 0; i--) {
+            for(int sum = 1; sum <= target; sum++) {
+                dp[i][sum] |= dp[i+1][sum];
+                
+                if(sum >= arr[i])
+                    dp[i][sum] |= dp[i+1][sum - arr[i]];
             }
         }
         
         return dp[0][target];
     }
 };
+
 
 //{ Driver Code Starts.
 
