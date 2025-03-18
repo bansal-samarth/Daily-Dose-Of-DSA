@@ -1,45 +1,23 @@
-/**
- * Definition for singly-linked list.
- * struct ListNode {
- *     int val;
- *     ListNode *next;
- *     ListNode() : val(0), next(nullptr) {}
- *     ListNode(int x) : val(x), next(nullptr) {}
- *     ListNode(int x, ListNode *next) : val(x), next(next) {}
- * };
- */
 class Solution {
 public:
     ListNode* partition(ListNode* head, int x) {
-        if(!head) return NULL;
+        ListNode smallDummy(0), greatDummy(0); // Dummy nodes
+        ListNode *smaller = &smallDummy, *greater = &greatDummy;
 
-        ListNode* small = new ListNode(0);
-        ListNode* smaller = small;
-
-        ListNode* great = new ListNode(0);
-        ListNode* greater = great;
-
-        ListNode* p = head;
-        while(p) {
-            if(p->val < x) {
-                smaller->next = p;
-                p = p->next;
+        while (head) {
+            if (head->val < x) {
+                smaller->next = head;
                 smaller = smaller->next;
-                smaller->next = NULL;
             } else {
-                greater->next = p;
-                p = p->next;
+                greater->next = head;
                 greater = greater->next;
-                greater->next = NULL;
             }
+            head = head->next;
         }
 
-        if(!small->next || !great->next) return head;
+        greater->next = nullptr; // Ensure last node in greater list doesn't point to old nodes
+        smaller->next = greatDummy.next; // Link smaller list to greater list
 
-        head = small->next;
-
-        smaller->next = great->next;
-
-        return head;
+        return smallDummy.next; // Return new head
     }
 };
