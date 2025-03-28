@@ -4,27 +4,35 @@ using namespace std;
 
 
 // } Driver Code Ends
+
 class Solution {
   public:
-    int activitySelection(vector<int> &start, vector<int> &end) {
-        vector<pair<int,int>> act;
+    int activitySelection(vector<int> &start, vector<int> &finish) {
+        
+        vector<pair<int,int>> vec;
         for(int i = 0; i < start.size(); i++)
-            act.push_back({end[i], start[i]});
+            vec.push_back({finish[i], start[i]});
         
-        sort(act.begin(), act.end());
+        sort(vec.begin(), vec.end());
         
-        int num = 1;
-        int ed = act[0].first;
-        for(int i = 1; i < act.size(); i++) {
-            if(act[i].second > ed) {
-                num++;
-                ed = act[i].first;
+        int count = 1;
+        int srt = vec[0].second;
+        int end = vec[0].first;
+        
+        for(int i = 1; i < vec.size(); i++) {
+            int a = vec[i].second;
+            int b = vec[i].first;
+            
+            if(end < a) {
+                count++;
+                end = b;
             }
         }
         
-        return num;
+        return count;
     }
 };
+
 
 //{ Driver Code Starts.
 
@@ -42,13 +50,13 @@ int main() {
             start.push_back(num);
         getline(cin, input);
         ss.clear();
-        vector<int> end;
+        vector<int> finish;
         ss.str(input);
         while (ss >> num)
-            end.push_back(num);
+            finish.push_back(num);
 
         Solution obj;
-        cout << obj.activitySelection(start, end) << endl;
+        cout << obj.activitySelection(start, finish) << endl;
         cout << "~\n";
     }
     return 0;
