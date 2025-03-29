@@ -1,26 +1,26 @@
 class Solution {
 public:
     vector<int> searchRange(vector<int>& nums, int target) {
+        int n = nums.size();
         int left = 0;
-        int right = nums.size() - 1;
+        int right = n - 1;
 
         while(left <= right) {
             int mid = left + (right - left) / 2;
 
             if(nums[mid] == target) {
-                int i = mid;
-                int j = mid;
-                
-                while(i > 0 && nums[i - 1] == target) i--;
-                while(j < nums.size() - 1 && nums[j + 1] == target) j++;
+                int i = mid-1, j = mid+1;
+                while(i >= 0 && nums[i] == target) i--;
+                while(j < n && nums[j] == target) j++;
 
-                return {i, j};
+                return {i+1, j-1};
             }
 
-            if(nums[mid] > target)
+            if(nums[mid] > target) {
                 right = mid - 1;
-            else
+            } else {
                 left = mid + 1;
+            }
         }
 
         return {-1, -1};
