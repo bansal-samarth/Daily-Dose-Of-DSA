@@ -6,28 +6,28 @@ using namespace std;
 
 
 // } Driver Code Ends
-
-/*You are required to complete this method*/
 class Solution {
   public:
     int startStation(vector<int> &gas, vector<int> &cost) {
         int n = gas.size();
-
-        int Saved = 0, Left = 0, start = 0;
+        
+        int start = 0;
+        int sum = 0;
+        int total = 0;
         for(int i = 0; i < n; i++) {
-            Saved += gas[i] - cost[i];
+            total += gas[i] - cost[i];
+            sum += gas[i] - cost[i];
             
-            if(Saved < 0) {
-                Left += Saved;
-                Saved = 0;
+            if(sum < 0) {
                 start = i + 1;
+                sum = 0;
             }
         }
         
-        if(Saved + Left >= 0)
-            return start;
+        if(total < 0)
+            return -1;
         
-        return -1;
+        return start;
     }
 };
 
@@ -59,9 +59,7 @@ int main() {
         Solution ob;
         int ans = ob.startStation(gas, cost);
 
-        cout << ans;
-
-        cout << endl;
+        cout << ans << endl;
         cout << "~\n";
     }
 
