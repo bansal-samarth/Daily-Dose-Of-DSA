@@ -11,7 +11,7 @@ public:
             if(val == target)
                 return mid;
             
-            if(val < nums[high]) {
+            if(val <= nums[high]) {
                 if(val < target && target <= nums[high])
                     low = mid + 1;
                 else
