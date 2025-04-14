@@ -4,56 +4,61 @@ using namespace std;
 
 
 // } Driver Code Ends
+
 class Solution {
   public:
     string findOrder(vector<string> &words) {
-        unordered_map<char, unordered_set<char>> adj;
+        unordered_map<char, vector<char>> adj;
         unordered_map<char, int> indegree;
         
         for(string word : words) {
             for(char ch : word) {
-                adj[ch] = unordered_set<char>();
+                adj[ch] = {};
                 indegree[ch] = 0;
             }
         }
         
-        for(int i = 0; i < words.size()-1; i++) {
-            string a = words[i];
-            string b = words[i+1];
+        for(int i = 0; i < words.size() - 1; i++) {
+            string first = words[i];
+            string second = words[i+1];
             
-            int len = min(a.size(), b.size());
-            if(a.substr(0, len) == b.substr(0, len) && a.size() > b.size())
+            int minLen = min(first.size(), second.size());
+            
+            if(first.size() > second.size() && first.substr(0, minLen)
+                == second.substr(0, minLen))
                 return "";
             
-            int k = 0;
-            while(k < len) {
-                if(a[k] != b[k]) {
-                    if (adj[a[k]].find(b[k]) == adj[a[k]].end()) {
-                        adj[a[k]].insert(b[k]);
-                        indegree[b[k]]++;  // Increase indegree for b[k]
-                    }
+            for(int it = 0; it < minLen; it++) {
+                if(first[it] != second[it]) {
+                    
+                    adj[first[it]].push_back(second[it]);
+                    indegree[second[it]]++;
                     break;
                 }
-                k++;
             }
         }
         
         queue<char> q;
-        for(auto i : indegree) {
-            if(i.second == 0)
-                q.push(i.first);
+        string res = "";
+
+        for(auto it : indegree) {
+            if(it.second == 0) {
+                q.push(it.first);
+            }
         }
         
-        string res = "";
-        while(q.size()) {
-            char ch = q.front();
+        while(!q.empty()) {
+            char letter = q.front();
             q.pop();
             
-            res += ch;
+            res += letter;
             
-            for(char letter : adj[ch]) {
-                if(--indegree[letter] == 0)
-                    q.push(letter);
+            for(char ch : adj[letter]) {
+                indegree[ch]--;
+                
+                if(indegree[ch] == 0) {
+                    q.push(ch);
+                }
             }
         }
         
