@@ -4,20 +4,22 @@ using namespace std;
 
 
 // } Driver Code Ends
+
 class Solution {
   public:
-    // int solve(vector<int>& arr, int idx, int prev) {
-    //     if(idx == arr.size())
-    //         return 0;
+    int solve(vector<int>& arr, int idx, int prev) {
+        if(idx >= arr.size())
+            return 0;
         
-    //     int skip = solve(arr, idx+1, prev);
+        int skip = solve(arr, idx + 1, prev);
         
-    //     int take = 0;
-    //     if(prev == -1 || arr[prev] < arr[idx])
-    //         take = solve(arr, idx+1, idx) + arr[idx];
+        int take = 0;
+        if(prev == -1 || arr[prev] < arr[idx])
+            take = solve(arr, idx + 1, idx) + arr[idx];
         
-    //     return max(skip, take);
-    // }
+        return max(skip, take);
+    }
+    
     int maxSumIS(vector<int>& arr) {
         // return solve(arr, 0, -1);
         
@@ -27,19 +29,20 @@ class Solution {
         for(int idx = n-1; idx >= 0; idx--) {
             for(int prev = idx-1; prev >= -1; prev--) {
                 
-                int skip = dp[idx+1][prev+1];
+                int skip = dp[idx + 1][prev + 1];
         
                 int take = 0;
                 if(prev == -1 || arr[prev] < arr[idx])
-                    take = dp[idx+1][idx+1] + arr[idx];
+                    take = dp[idx + 1][idx + 1] + arr[idx];
                 
-                dp[idx][prev+1] = max(skip, take);
+                dp[idx][prev + 1] = max(skip, take);
             }
         }
         
         return dp[0][-1+1];
     }
 };
+
 
 //{ Driver Code Starts.
 int main() {
