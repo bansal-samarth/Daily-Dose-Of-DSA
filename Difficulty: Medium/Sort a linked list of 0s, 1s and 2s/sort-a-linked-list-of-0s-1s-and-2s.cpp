@@ -34,77 +34,42 @@ void freeList(struct Node* head) {
 
 // } Driver Code Ends
 
-/*
-
-  Node is defined as
-  struct Node {
-    int data;
-    struct Node *next;
-    Node(int x) {
-        data = x;
-        next = NULL;
-    }
-};
-
-*/
 class Solution {
-  public:
+public:
+    // Function to sort a linked list of 0s, 1s and 2s.
     Node* segregate(Node* head) {
-        
-        Node* zeroHead = new Node(0);
-        Node* oneHead = new Node(0);
-        Node* twoHead = new Node(0);
-        
-        Node* z = zeroHead;
-        Node* o = oneHead;
-        Node* t = twoHead;
-        
-        Node* p = head;
-        
-        for(; p != NULL; p = p->next) {
-            
-            if(p->data == 0) {
-                z->next = p;
-                z = p;
+        // code here
+        int no_zero = 0, no_one = 0, no_two = 0;
+        Node* temp = head;
+        while (temp) {
+            if (temp->data == 0) {
+                no_zero++;
+            } else if (temp->data == 1) {
+                no_one++;
+            } else {
+                no_two++;
             }
-            else if(p->data == 1) {
-                o->next = p;
-                o = p;
-            } 
-            else {
-                t->next = p;
-                t = p;
-            } 
+            temp = temp->next;
         }
-        
-        // After creating the three chains
-        z->next = NULL;  // Terminate zero list
-        o->next = NULL;  // Terminate one list 
-        t->next = NULL;  // Terminate two list
-        
-        Node* ans = new Node(-1);
-        
-        Node* it = ans;
-        
-        if(zeroHead->next) {
-            it->next = zeroHead->next;
-            it = z;
+
+        temp = head;
+
+        while (temp) {
+            if (no_zero) {
+                temp->data = 0;
+                no_zero--;
+            } else if (no_one) {
+                temp->data = 1;
+                no_one--;
+            } else {
+                temp->data = 2;
+                no_two--;
+            }
+            temp = temp->next;
         }
-        
-        if(oneHead->next) {
-            it->next = oneHead->next;
-            it = o;
-        }
-        
-        if(twoHead->next) {
-            it->next = twoHead->next;
-            it = t;
-        }
-        
-        return ans->next;
+        return head;
     }
 };
-
 
 
 //{ Driver Code Starts.
