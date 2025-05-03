@@ -7,34 +7,25 @@ using namespace std;
 
 class Solution {
   public:
-    // int solve(int W, vector<int> &val, vector<int> &wt, int idx) {
-    //     if(idx == val.size())
-    //         return 0;
-        
-    //     int skip = solve(W, val, wt, idx+1);
-        
-    //     int take = 0;
-    //     if(W >= wt[idx]) {
-    //         take = solve(W - wt[idx], val, wt, idx+1) + val[idx];
-    //     }
-        
-    //     return max(skip, take);
-    // }
     int knapsack(int W, vector<int> &val, vector<int> &wt) {
-        int n = val.size();
-        vector<vector<int>> dp(n+1, vector<int>(W+1, 0));
         
-        for(int idx = n-1; idx >= 0; idx--) {
-            for(int wgt = 0; wgt <= W; wgt++) {
-                dp[idx][wgt] = dp[idx+1][wgt];
-    
-                if(wgt >= wt[idx]) {
-                    dp[idx][wgt] = max(dp[idx][wgt], dp[idx+1][wgt - wt[idx]] + val[idx]); // Include item
-                }
+        int n = val.size();
+        vector<vector<int>> dp(W+1, vector<int>(n+1, 0));
+        
+        for(int w = 0; w <= W; w++) {
+            for(int idx = n-1; idx >= 0; idx--) {
+                
+                int skip = dp[w][idx + 1];
+                
+                int take = 0;
+                if(w >= wt[idx])
+                    take = dp[w - wt[idx]][idx + 1] + val[idx];
+                
+                dp[w][idx] = max(skip, take);
             }
         }
         
-        return dp[0][W];
+        return dp[W][0];
     }
 };
 
