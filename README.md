@@ -125,17 +125,6 @@ Daily-Dose-Of-DSA/
 
 ---
 
-## 🤝 **Contributing**
-
-This is a personal learning repository showcasing my DSA journey. Feel free to explore the solutions and learn from them!
-
----
-
-## 📜 **License**
-
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
-
----
 
 <div align="center">
 
