@@ -3,41 +3,44 @@ public:
     string decodeString(string s) {
         stack<string> st;
 
-        for(char ch : s) {
-            if(ch == ']') {
-                string word = "";
-                while(!st.empty() && isalpha(st.top()[0])) {
-                    word = st.top() + word;
+        for(int i = 0; i < s.size(); i++) {
+            
+            if(s[i] == ']') {
+                
+                string mini = "";
+                while(!st.empty() && st.top()[0] != '[') {
+                    mini += st.top();
                     st.pop();
                 }
                 st.pop();
 
-                string num = "";
+                string digits = "";
                 while(!st.empty() && isdigit(st.top()[0])) {
-                    num = st.top() + num;
+                    digits = st.top() + digits;
                     st.pop();
                 }
-
-                int n = stoi(num);
-                string res = "";
-                for(int i = 0 ; i < n; i++) {
-                    res += word;
+                
+                string word = "";
+                int num = stoi(digits);
+                for(int k = 0; k < num; k++) {
+                    word += mini;
                 }
 
-                st.push(res);
+                st.push(word);
             }
             else {
-                // converts their ASCII value to string
-                st.push(string(1, ch));
+                st.push(string(1, s[i]));
             }
         }
 
-        string ans = "";
+        string decoded = "";
         while(!st.empty()) {
-            ans = st.top() + ans;
+            decoded += st.top();
             st.pop();
         }
 
-        return ans;
+        reverse(decoded.begin(), decoded.end());
+
+        return decoded;
     }
 };
