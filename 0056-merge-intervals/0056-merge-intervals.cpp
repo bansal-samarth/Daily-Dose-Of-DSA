@@ -2,23 +2,23 @@ class Solution {
 public:
     vector<vector<int>> merge(vector<vector<int>>& intervals) {
         
-        vector<vector<int>> ans;
+        int n = intervals.size();
         sort(intervals.begin(), intervals.end());
+        vector<vector<int>> ans;
 
         int start = intervals[0][0];
-        int end = intervals[0][1];
+        int connect = intervals[0][1];
+        for(int i = 0; i < n; i++) {
 
-        for(int i = 1; i < intervals.size(); i++) {
-            
-            if(end < intervals[i][0]) {
-                ans.push_back({start, end});
+            if(connect < intervals[i][0]) {
+                ans.push_back({start, connect});
                 start = intervals[i][0];
             }
-
-            end = max(end, intervals[i][1]);
+            
+            connect = max(connect, intervals[i][1]);
         }
 
-        ans.push_back({start, end});
+        ans.push_back({start, connect});
 
         return ans;
     }
