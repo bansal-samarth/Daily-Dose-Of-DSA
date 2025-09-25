@@ -1,132 +1,35 @@
 class Solution {
-public:
-    vector<int> majorityElement(vector<int>& nums) {
+ public:
+  vector<int> majorityElement(vector<int>& nums) {
+    vector<int> ans;
+    int candidate1 = 0;
+    int candidate2 = 1;   // any number different from candidate1
+    int countSoFar1 = 0;  // the number of candidate1 so far
+    int countSoFar2 = 0;  // the number of candidate2 so far
 
-        if(nums.size() == 1)
-            return nums;
-        
-        int one = INT_MIN;
-        int count1 = -1;
-        int two = INT_MIN;
-        int count2 = -1;
+    for (const int num : nums)
+      if (num == candidate1) {
+        ++countSoFar1;
+      } else if (num == candidate2) {
+        ++countSoFar2;
+      } else if (countSoFar1 == 0) {  // Assign the new candidate.
+        candidate1 = num;
+        ++countSoFar1;
+      } else if (countSoFar2 == 0) {  // Assign the new candidate.
+        candidate2 = num;
+        ++countSoFar2;
+      } else {  // Meet a new number, so pair with the previous counts.
+        --countSoFar1;
+        --countSoFar2;
+      }
 
-        for(int i = 0 ; i < nums.size(); i++)
-        {
-            if(count1 == -1 && nums[i] != two)
-            {
-                count1++;
-                one = nums[i];
-            }
+    const int count1 = ranges::count(nums, candidate1);
+    const int count2 = ranges::count(nums, candidate2);
 
-            else if(count2 == -1 && nums[i] != one)
-            {
-                count2++;
-                two = nums[i];
-            }
-            else if(nums[i] == one) count1++;
-
-            else if(nums[i] == two) count2++;
-
-            else
-            {
-                count1--;
-                count2--;
-            }
-        }
-
-        cout << one << endl << two <<endl;
-
-        int freq1 = 0; int freq2 = 0;
-
-        for(int i = 0; i < nums.size(); i++)
-        {
-            if(nums[i] == one)
-                freq1++;
-            
-            else if(nums[i] == two)
-                freq2++;
-        }
-
-        vector<int> ans;
-
-        if(freq1 > nums.size()/3)
-            ans.push_back(one);
-
-        if(freq2 > nums.size()/3)
-            ans.push_back(two);
-        
-        return ans;
-    }
+    if (count1 > nums.size() / 3)
+      ans.push_back(candidate1);
+    if (count2 > nums.size() / 3)
+      ans.push_back(candidate2);
+    return ans;
+  }
 };
-
-
-
-
-
-
-
-
-
-
-
-/*
-class Solution {
-public:
-    vector<int> majorityElement(vector<int>& nums) {
-
-        if (nums.size() == 1) return nums;
-        
-        int first = INT_MIN;
-        int count1 = 0;
-        int second = INT_MIN;
-        int count2 = 0;
-
-        for(int i = 0; i < nums.size(); i++)
-        {
-            
-            if(count1 == 0 && second != nums[i])
-            {
-                first = nums[i];
-                count1 = 1;
-            }
-            else if(count2 == 0 && first != nums[i])
-            {
-                second = nums[i];
-                count2 = 1;
-            }
-            else if(first == nums[i])
-                count1++;
-            else if(second == nums[i])
-                count2++;
-            else
-            {
-                count1--;
-                count2--;
-            }
-        }
-
-        int freq1 = 0 , freq2 = 0;
-
-        for(int i: nums)
-        {
-            if(first != INT_MIN && first == i)
-                freq1++;
-            else if (second != INT_MIN && second == i)
-                freq2++;
-        }
-
-
-        vector<int> ans;
-
-        if(freq1 > nums.size() / 3)
-            ans.push_back(first);
-
-        if(freq2 > nums.size() / 3)
-            ans.push_back(second);
-        
-        cout << first << endl << second << endl;
-        
-        return ans;
-    }
-};
-*/
