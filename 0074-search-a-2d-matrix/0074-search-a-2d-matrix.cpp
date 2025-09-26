@@ -1,36 +1,20 @@
 class Solution {
 public:
-    bool searchMatrix(vector<vector<int>>& mat, int target) {
-        int n = mat.size();
-        int m = mat[0].size();
+    bool searchMatrix(vector<vector<int>>& matrix, int target) {
+        int m = matrix.size();
+        int n = matrix[0].size();
 
-        if(target < mat[0][0] || mat[n-1][m-1] < target)
-            return false;
-        
-        int low = 0;
-        int high = n-1;
-        while (low < high) {
-            int mid = low + (high - low + 1) / 2; // Move mid slightly up
-            if (mat[mid][0] <= target)
-                low = mid;
-            else
-                high = mid - 1;
-        }
+        int i = 0;
+        int j = n-1;
+        int root = matrix[i][j];
 
-        int row = low;
-        cout << row ;
-        low = 0;
-        high = m-1;
-        while(low <= high) {
-            int mid = low + (high - low) / 2;
-
-            if(mat[row][mid] == target)
+        while(i <= m-1 && j >= 0) {
+            if(matrix[i][j] == target)
                 return true;
-
-            if(mat[row][mid] > target)
-                high = mid - 1;
+            if(matrix[i][j] > target)
+                j--;
             else
-                low = mid + 1;
+                i++;
         }
 
         return false;
