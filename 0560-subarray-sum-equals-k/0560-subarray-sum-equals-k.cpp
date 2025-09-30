@@ -1,23 +1,24 @@
 class Solution {
 public:
     int subarraySum(vector<int>& nums, int k) {
+
         unordered_map<int, int> map;
         map[0] = 1;
 
-        int cnt = 0;
+        int ans = 0;
+
+        int left = 0;
         int sum = 0;
-        for(int num : nums) {
-            sum += num;
 
-            int complement = sum - k;
+        for(int right = 0; right < nums.size(); right++) {
+            sum += nums[right];
 
-            if(map.find(complement) != map.end()) {
-                cnt += map[complement];
-            }
-
+            if(map.contains(sum - k))
+                ans += map[sum - k];
+            
             map[sum]++;
         }
 
-        return cnt;
+        return ans;
     }
 };
