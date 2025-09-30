@@ -1,35 +1,40 @@
 class Solution {
- public:
-  vector<int> majorityElement(vector<int>& nums) {
-    vector<int> ans;
-    int candidate1 = 0;
-    int candidate2 = 1;   // any number different from candidate1
-    int countSoFar1 = 0;  // the number of candidate1 so far
-    int countSoFar2 = 0;  // the number of candidate2 so far
+public:
+    vector<int> majorityElement(vector<int>& nums) {
+        
+        int n1 = -1;
+        int c1 = 0;
+        int n2 = -1;
+        int c2 = 0;
 
-    for (const int num : nums)
-      if (num == candidate1) {
-        ++countSoFar1;
-      } else if (num == candidate2) {
-        ++countSoFar2;
-      } else if (countSoFar1 == 0) {  // Assign the new candidate.
-        candidate1 = num;
-        ++countSoFar1;
-      } else if (countSoFar2 == 0) {  // Assign the new candidate.
-        candidate2 = num;
-        ++countSoFar2;
-      } else {  // Meet a new number, so pair with the previous counts.
-        --countSoFar1;
-        --countSoFar2;
-      }
+        for(int i : nums) {
+            if(c1 == 0 && n2 != i) {
+                n1 = i;
+                c1++;
+            }
+            else if(c2 == 0 && n1 != i) {
+                n2 = i;
+                c2++;
+            }
+            else if(n1 == i) c1++;
+            else if(n2 == i) c2++;
+            else {
+                c1--;
+                c2--;
+            }
+        }
 
-    const int count1 = ranges::count(nums, candidate1);
-    const int count2 = ranges::count(nums, candidate2);
+        int s = nums.size() / 3;
 
-    if (count1 > nums.size() / 3)
-      ans.push_back(candidate1);
-    if (count2 > nums.size() / 3)
-      ans.push_back(candidate2);
-    return ans;
-  }
+        int cnt1 = ranges::count(nums, n1);
+        int cnt2 = ranges::count(nums, n2);
+        
+        vector<int> ans;
+        if(cnt1 > s)
+            ans.push_back(n1);
+        if(cnt2 > s)
+            ans.push_back(n2);
+        
+        return ans;
+    }
 };
