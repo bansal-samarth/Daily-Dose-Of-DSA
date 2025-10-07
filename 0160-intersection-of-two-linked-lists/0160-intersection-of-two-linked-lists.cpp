@@ -10,25 +10,27 @@ class Solution {
 public:
     ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
         
-        ListNode* p = headA;
-        ListNode* q = headB;
+        ListNode* a = headA;
+        ListNode* b = headB;
+        int cnt = 0;
 
-        int n = 0;
+        while(a != b) {
+            a = a->next;
+            b = b->next;
 
-        while(p != q) {
-            p = p->next;
-            q = q->next;
-
-            if(!p) {
-                p = headB;
-                n++;
+            if(!a) {
+                a = headB;
+                cnt++;
             }
 
-            if(!q) q = headA;
+            if(!b) {
+                b = headA;
+                cnt++;
+            }
 
-            if(n == 2) return NULL;
+            if(cnt > 2) return NULL;
         }
 
-        return p;
+        return a;
     }
 };
