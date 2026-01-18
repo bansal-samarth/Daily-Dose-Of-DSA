@@ -142,6 +142,7 @@ Daily-Dose-Of-DSA/
 | [0003-longest-substring-without-repeating-characters](https://github.com/bansal-samarth/Daily-Dose-Of-DSA/tree/master/0003-longest-substring-without-repeating-characters) |
 | [0013-roman-to-integer](https://github.com/bansal-samarth/Daily-Dose-Of-DSA/tree/master/0013-roman-to-integer) |
 | [0128-longest-consecutive-sequence](https://github.com/bansal-samarth/Daily-Dose-Of-DSA/tree/master/0128-longest-consecutive-sequence) |
+| [0229-majority-element-ii](https://github.com/bansal-samarth/Daily-Dose-Of-DSA/tree/master/0229-majority-element-ii) |
 ## String
 |  |
 | ------- |
@@ -155,6 +156,7 @@ Daily-Dose-Of-DSA/
 |  |
 | ------- |
 | [0128-longest-consecutive-sequence](https://github.com/bansal-samarth/Daily-Dose-Of-DSA/tree/master/0128-longest-consecutive-sequence) |
+| [0229-majority-element-ii](https://github.com/bansal-samarth/Daily-Dose-Of-DSA/tree/master/0229-majority-element-ii) |
 ## Union Find
 |  |
 | ------- |
@@ -163,4 +165,12 @@ Daily-Dose-Of-DSA/
 |  |
 | ------- |
 | [0013-roman-to-integer](https://github.com/bansal-samarth/Daily-Dose-Of-DSA/tree/master/0013-roman-to-integer) |
+## Sorting
+|  |
+| ------- |
+| [0229-majority-element-ii](https://github.com/bansal-samarth/Daily-Dose-Of-DSA/tree/master/0229-majority-element-ii) |
+## Counting
+|  |
+| ------- |
+| [0229-majority-element-ii](https://github.com/bansal-samarth/Daily-Dose-Of-DSA/tree/master/0229-majority-element-ii) |
 <!---LeetCode Topics End-->
