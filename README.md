@@ -150,6 +150,7 @@ Daily-Dose-Of-DSA/
 | ------- |
 | [0003-longest-substring-without-repeating-characters](https://github.com/bansal-samarth/Daily-Dose-Of-DSA/tree/master/0003-longest-substring-without-repeating-characters) |
 | [0013-roman-to-integer](https://github.com/bansal-samarth/Daily-Dose-Of-DSA/tree/master/0013-roman-to-integer) |
+| [0014-longest-common-prefix](https://github.com/bansal-samarth/Daily-Dose-Of-DSA/tree/master/0014-longest-common-prefix) |
 ## Sliding Window
 |  |
 | ------- |
@@ -158,6 +159,7 @@ Daily-Dose-Of-DSA/
 |  |
 | ------- |
 | [0001-two-sum](https://github.com/bansal-samarth/Daily-Dose-Of-DSA/tree/master/0001-two-sum) |
+| [0014-longest-common-prefix](https://github.com/bansal-samarth/Daily-Dose-Of-DSA/tree/master/0014-longest-common-prefix) |
 | [0128-longest-consecutive-sequence](https://github.com/bansal-samarth/Daily-Dose-Of-DSA/tree/master/0128-longest-consecutive-sequence) |
 | [0169-majority-element](https://github.com/bansal-samarth/Daily-Dose-Of-DSA/tree/master/0169-majority-element) |
 | [0229-majority-element-ii](https://github.com/bansal-samarth/Daily-Dose-Of-DSA/tree/master/0229-majority-element-ii) |
@@ -189,4 +191,8 @@ Daily-Dose-Of-DSA/
 |  |
 | ------- |
 | [0050-powx-n](https://github.com/bansal-samarth/Daily-Dose-Of-DSA/tree/master/0050-powx-n) |
+## Trie
+|  |
+| ------- |
+| [0014-longest-common-prefix](https://github.com/bansal-samarth/Daily-Dose-Of-DSA/tree/master/0014-longest-common-prefix) |
 <!---LeetCode Topics End-->
