@@ -139,6 +139,7 @@ Daily-Dose-Of-DSA/
 ## Hash Table
 |  |
 | ------- |
+| [0001-two-sum](https://github.com/bansal-samarth/Daily-Dose-Of-DSA/tree/master/0001-two-sum) |
 | [0003-longest-substring-without-repeating-characters](https://github.com/bansal-samarth/Daily-Dose-Of-DSA/tree/master/0003-longest-substring-without-repeating-characters) |
 | [0013-roman-to-integer](https://github.com/bansal-samarth/Daily-Dose-Of-DSA/tree/master/0013-roman-to-integer) |
 | [0128-longest-consecutive-sequence](https://github.com/bansal-samarth/Daily-Dose-Of-DSA/tree/master/0128-longest-consecutive-sequence) |
@@ -156,6 +157,7 @@ Daily-Dose-Of-DSA/
 ## Array
 |  |
 | ------- |
+| [0001-two-sum](https://github.com/bansal-samarth/Daily-Dose-Of-DSA/tree/master/0001-two-sum) |
 | [0128-longest-consecutive-sequence](https://github.com/bansal-samarth/Daily-Dose-Of-DSA/tree/master/0128-longest-consecutive-sequence) |
 | [0169-majority-element](https://github.com/bansal-samarth/Daily-Dose-Of-DSA/tree/master/0169-majority-element) |
 | [0229-majority-element-ii](https://github.com/bansal-samarth/Daily-Dose-Of-DSA/tree/master/0229-majority-element-ii) |
