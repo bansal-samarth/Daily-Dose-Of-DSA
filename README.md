@@ -162,6 +162,7 @@ Daily-Dose-Of-DSA/
 | [0001-two-sum](https://github.com/bansal-samarth/Daily-Dose-Of-DSA/tree/master/0001-two-sum) |
 | [0014-longest-common-prefix](https://github.com/bansal-samarth/Daily-Dose-Of-DSA/tree/master/0014-longest-common-prefix) |
 | [0026-remove-duplicates-from-sorted-array](https://github.com/bansal-samarth/Daily-Dose-Of-DSA/tree/master/0026-remove-duplicates-from-sorted-array) |
+| [0045-jump-game-ii](https://github.com/bansal-samarth/Daily-Dose-Of-DSA/tree/master/0045-jump-game-ii) |
 | [0128-longest-consecutive-sequence](https://github.com/bansal-samarth/Daily-Dose-Of-DSA/tree/master/0128-longest-consecutive-sequence) |
 | [0169-majority-element](https://github.com/bansal-samarth/Daily-Dose-Of-DSA/tree/master/0169-majority-element) |
 | [0229-majority-element-ii](https://github.com/bansal-samarth/Daily-Dose-Of-DSA/tree/master/0229-majority-element-ii) |
@@ -205,8 +206,13 @@ Daily-Dose-Of-DSA/
 |  |
 | ------- |
 | [0022-generate-parentheses](https://github.com/bansal-samarth/Daily-Dose-Of-DSA/tree/master/0022-generate-parentheses) |
+| [0045-jump-game-ii](https://github.com/bansal-samarth/Daily-Dose-Of-DSA/tree/master/0045-jump-game-ii) |
 ## Backtracking
 |  |
 | ------- |
 | [0022-generate-parentheses](https://github.com/bansal-samarth/Daily-Dose-Of-DSA/tree/master/0022-generate-parentheses) |
+## Greedy
+|  |
+| ------- |
+| [0045-jump-game-ii](https://github.com/bansal-samarth/Daily-Dose-Of-DSA/tree/master/0045-jump-game-ii) |
 <!---LeetCode Topics End-->
