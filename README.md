@@ -162,6 +162,7 @@ Daily-Dose-Of-DSA/
 | [0001-two-sum](https://github.com/bansal-samarth/Daily-Dose-Of-DSA/tree/master/0001-two-sum) |
 | [0014-longest-common-prefix](https://github.com/bansal-samarth/Daily-Dose-Of-DSA/tree/master/0014-longest-common-prefix) |
 | [0026-remove-duplicates-from-sorted-array](https://github.com/bansal-samarth/Daily-Dose-Of-DSA/tree/master/0026-remove-duplicates-from-sorted-array) |
+| [0042-trapping-rain-water](https://github.com/bansal-samarth/Daily-Dose-Of-DSA/tree/master/0042-trapping-rain-water) |
 | [0045-jump-game-ii](https://github.com/bansal-samarth/Daily-Dose-Of-DSA/tree/master/0045-jump-game-ii) |
 | [0128-longest-consecutive-sequence](https://github.com/bansal-samarth/Daily-Dose-Of-DSA/tree/master/0128-longest-consecutive-sequence) |
 | [0169-majority-element](https://github.com/bansal-samarth/Daily-Dose-Of-DSA/tree/master/0169-majority-element) |
@@ -202,10 +203,12 @@ Daily-Dose-Of-DSA/
 |  |
 | ------- |
 | [0026-remove-duplicates-from-sorted-array](https://github.com/bansal-samarth/Daily-Dose-Of-DSA/tree/master/0026-remove-duplicates-from-sorted-array) |
+| [0042-trapping-rain-water](https://github.com/bansal-samarth/Daily-Dose-Of-DSA/tree/master/0042-trapping-rain-water) |
 ## Dynamic Programming
 |  |
 | ------- |
 | [0022-generate-parentheses](https://github.com/bansal-samarth/Daily-Dose-Of-DSA/tree/master/0022-generate-parentheses) |
+| [0042-trapping-rain-water](https://github.com/bansal-samarth/Daily-Dose-Of-DSA/tree/master/0042-trapping-rain-water) |
 | [0045-jump-game-ii](https://github.com/bansal-samarth/Daily-Dose-Of-DSA/tree/master/0045-jump-game-ii) |
 ## Backtracking
 |  |
@@ -215,4 +218,12 @@ Daily-Dose-Of-DSA/
 |  |
 | ------- |
 | [0045-jump-game-ii](https://github.com/bansal-samarth/Daily-Dose-Of-DSA/tree/master/0045-jump-game-ii) |
+## Stack
+|  |
+| ------- |
+| [0042-trapping-rain-water](https://github.com/bansal-samarth/Daily-Dose-Of-DSA/tree/master/0042-trapping-rain-water) |
+## Monotonic Stack
+|  |
+| ------- |
+| [0042-trapping-rain-water](https://github.com/bansal-samarth/Daily-Dose-Of-DSA/tree/master/0042-trapping-rain-water) |
 <!---LeetCode Topics End-->
